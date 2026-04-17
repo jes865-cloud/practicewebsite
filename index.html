@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Create Account</h1>
+    <p>Fill in the form below. Validation happens when you submit, and duplicate emails are blocked.</p>
+
+    <form id="signupForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" />
+        <small class="message"></small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" />
+        <small class="message"></small>
+      </div>
+
+      <div class="field">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" />
+        <small class="message"></small>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" />
+        <small class="message"></small>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" />
+        <small class="message"></small>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="success-box" id="successBox">
+      Form submitted successfully.
+    </div>
+
+    <p class="switch-text">
+      Already have an account?
+      <a href="login.html">Log in here</a>
+  </p>
+  </div>
+
+  
+
+  <script defer src="common.js"></script>
+  <script defer src="signup.js"></script>
+</body>
+</html>

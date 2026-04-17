@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Created</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Account Created</h1>
+    <p id="successMessage">Your sign-up was successful.</p>
+
+    <div class="success-card">
+      <h2>Account Details</h2>
+      <p><strong>Name:</strong> <span id="userName">-</span></p>
+      <p><strong>Email:</strong> <span id="userEmail">-</span></p>
+      <p><strong>Phone Number:</strong> <span id="userPhoneNumber">-</span></p>
+    </div>
+
+    <p id="redirectText" class="redirect-text">
+      Redirecting to login page in 5 seconds...
+    </p>
+
+    <div class="action-group">
+      <a href="login.html" class="button-link">Log In Now</a>
+      <a href="index.html" class="button-link secondary-button">Create Another Account</a>
+    </div>
+  </div>
+
+  <script>
+    const pendingUser = JSON.parse(localStorage.getItem("pendingSignupUser"));
+
+    if (pendingUser) {
+      document.getElementById("userName").textContent = pendingUser.fullName;
+      document.getElementById("userEmail").textContent = pendingUser.email;
+      document.getElementById("userPhoneNumber").textContent = pendingUser.phoneNumber;
+      document.getElementById("successMessage").textContent =
+        "Your account has been created successfully.";
+    } else {
+      document.getElementById("successMessage").textContent =
+        "Your account was created.";
+      document.getElementById("redirectText").textContent =
+        "No recent sign-up details were found.";
+    }
+
+    let seconds = 5;
+    const redirectText = document.getElementById("redirectText");
+
+    const timer = setInterval(() => {
+      seconds--;
+      if (seconds > 0) {
+        redirectText.textContent = `Redirecting to login page in ${seconds} seconds...`;
+      } else {
+        clearInterval(timer);
+        localStorage.removeItem("pendingSignupUser");
+        window.location.href = "login.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

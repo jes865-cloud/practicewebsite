@@ -1,0 +1,16 @@
+.switch-text {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-text a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}

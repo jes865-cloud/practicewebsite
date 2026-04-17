@@ -1,0 +1,68 @@
+.request-item {
+  padding: 14px;
+  border: 1px solid #dbe3f0;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: #f8faff;
+}
+
+.request-item p {
+  margin: 6px 0;
+  text-align: left;
+  color: #1f2937;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.approve-btn,
+.reject-btn,
+.delete-btn,
+.delete-user-btn,
+.approve-password-btn,
+.reject-password-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.approve-btn {
+  background: #16a34a;
+}
+
+.reject-btn {
+  background: #f59e0b;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+
+.delete-user-btn {
+  background: #7c3aed;
+}
+
+.approve-password-btn {
+  background: #2563eb;
+}
+
+.reject-password-btn {
+  background: #dc2626;
+}
+
+.approve-btn:hover,
+.reject-btn:hover,
+.delete-btn:hover,
+.delete-user-btn:hover,
+.approve-password-btn:hover,
+.reject-password-btn:hover {
+  opacity: 0.95;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <p id="welcomeText">Welcome.</p>
+
+    <div class="success-card">
+      <h2>Submit a Leave Request</h2>
+
+      <form id="leaveForm" novalidate>
+        <div class="field">
+            <label for="leaveType">
+            Leave Type
+            <span class="required-badge">Required</span>
+            </label>
+            <select id="leaveType" name="leaveType">
+                <option value="">Select leave type</option>
+                <option value="Annual Leave">Annual Leave</option>
+                <option value="Sick Leave">Sick Leave</option>
+                <option value="Personal Leave">Personal Leave</option>
+            </select>
+            <small class="form-hint" id="leaveHint">Choose the type of leave you are requesting.</small>
+            <small class="message"></small>
+        </div>
+
+        <div class="field">
+            <label for="startDate">
+            Start Date
+            <span class="required-badge">Required</span>
+            </label>
+            <input type="date" id="startDate" name="startDate" />
+            <small class="form-hint">Select the first day of your leave.</small>
+            <small class="message"></small>
+        </div>
+
+        <div class="field">
+            <label for="endDate">
+            End Date
+            <span class="required-badge">Required</span>
+            </label>
+            <input type="date" id="endDate" name="endDate" />
+            <small class="form-hint">Select the final day of your leave.</small>
+            <small class="message"></small>
+        </div>
+
+        <div class="field">
+            <label for="reason">
+            Reason
+            <span class="required-badge">Required</span>
+            </label>
+            <textarea id="reason" name="reason" placeholder="Briefly explain your request"></textarea>
+            <div class="field-meta">
+            <small class="form-hint">Provide enough detail for review.</small>
+            <small id="reasonCount">0 / 250</small>
+            </div>
+            <small class="message"></small>
+        </div>
+
+        <div class="field" id="certificateField" style="display: none;">
+            <label for="doctorCertificate">
+            Doctor Certificate
+            <span class="required-badge">Required for Sick Leave</span>
+            </label>
+            <input
+            type="file"
+            id="doctorCertificate"
+            name="doctorCertificate"
+            accept=".pdf,.jpg,.jpeg,.png"
+            />
+            <small class="form-hint">Accepted formats: PDF, JPG, JPEG, PNG.</small>
+            <small class="message"></small>
+        </div>
+
+        <div class="summary-box" id="requestSummary">
+            <p><strong>Summary</strong></p>
+            <p id="summaryType">Leave type: Not selected</p>
+            <p id="summaryDates">Dates: Not selected</p>
+            <p id="summaryDays">Estimated days: 0</p>
+        </div>
+
+        <div id="formNotice" class="form-notice" style="display: none;"></div>
+
+        <button type="submit" id="submitRequestBtn">Submit Request</button>
+        </form>
+    </div>
+
+    <div class="success-card">
+      <h2>My Requests</h2>
+      <div id="requestList"></div>
+    </div>
+
+    <button id="logoutBtn" class="secondary-button" type="button">Log Out</button>
+
+    <button id="deleteAccountBtn" class="delete-btn" type="button">Delete Account</button>
+  </div>
+
+  <script defer src="common.js"></script>
+  <script defer src="dashboard.js"></script>
+</body>
+</html>
